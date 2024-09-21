@@ -15,17 +15,13 @@ spec:
     spec:
       containers: 
       - name: book-catalog
-      ports:
-        - containerPort: 4000
-      command: ["uvicorn"]
-      args: ["app.main:app", "--host", "0.0.0.0", "--port", "4000"]
-      image: task72.azurecr.io/book-catalog
-      imagePullPolicy: IfNotPresent
-      env:
+        image: vk2610.azurecr.io/book-catalog
+        imagePullPolicy: IfNotPresent
+        env:
         - name: PORT
-          value: 4000
+          value: "4000"
         - name: DATABASE_URL
-          value: "postgresql://varsha_task72c_user:FfZ5uRByk6UXXfo8pncYPopEnSJZgsoz@dpg-crmo9iq3esus7380rlrg-a.oregon-postgres.render.com/varsha_task72c"
+          value: "postgresql://project_part3_lebe_user:qsTRAQ7P79IsjJFMgoDuGXWTNycbA4Rk@dpg-crn5v868ii6s73el93m0-a.oregon-postgres.render.com/project_part3_lebe"
 ---
 apiVersion: v1
 kind: Service
@@ -58,17 +54,13 @@ spec:
     spec:
       containers: 
       - name: inventory-management
-      ports:
-        - containerPort: 3000
-      command: ["uvicorn"]
-      args: ["app.main:app", "--host", "0.0.0.0", "--port", "3000"]
-      image: task72.azurecr.io/inventory-management
-      imagePullPolicy: IfNotPresent
-      env:
+        image: vk2610.azurecr.io/inventory-management
+        imagePullPolicy: IfNotPresent
+        env:
         - name: PORT
-          value: 3000
+          value: "3000"
         - name: DATABASE_URL
-          value: "postgresql://varsha_task72c_user:FfZ5uRByk6UXXfo8pncYPopEnSJZgsoz@dpg-crmo9iq3esus7380rlrg-a.oregon-postgres.render.com/varsha_task72c"
+          value: "postgresql://project_part3_lebe_user:qsTRAQ7P79IsjJFMgoDuGXWTNycbA4Rk@dpg-crn5v868ii6s73el93m0-a.oregon-postgres.render.com/project_part3_lebe"
 ---
 apiVersion: v1
 kind: Service
